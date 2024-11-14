@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(){
+    int numMaterias, i;
+    float promedio, sumaNotas, nota;
+
+    printf("Ingrese el número de materias: ");
+    scanf("%d", &numMaterias);
+ //esto de aqui debe de contar a modo de ciclo cuantas materias va a registrar la persona
+ //el problema es que realmente no esta generando un array con el numero de variables (quiero que quede en array para manejarlo en archivo)
+    for (i = 1; i <= numMaterias; i++) {
+        sumaNotas = 0;
+        int numCalificaciones;
+
+        printf("\nMateria %d:\n", i);
+        printf("Ingrese el número de calificaciones: "); //esta cosa de aqui existe debido a que no pude encontrar una forma de hacer el promedio mejor (no voy a sacarme una funcion del culo ahorita)
+        scanf("%d", &numCalificaciones);
+
+        for (int j = 0; j < numCalificaciones; j++) {
+            printf("Ingrese la calificación %d: ", j + 1); //se le pide al user que meta calificacion por calificacion para hacer el promedio (en teoria esto deberia ir en un array, pero no)
+            scanf("%f", &nota);
+            sumaNotas += nota;
+        }
+
+        promedio = sumaNotas / numCalificaciones; //promedio
+        printf("Promedio de la materia %d: %.2f\n", i, promedio);
+
+        if (promedio >= 8.0) { //grupos dependiendo de como se desempeña el wey
+            printf("Desempeño: Excelente\n");
+        } else if (promedio >= 5.1) {
+            printf("Desempeño: Regular\n");
+        } else {
+            printf("Desempeño: Malo\n");
+        }
+    }
+
+    return 0;
+}
