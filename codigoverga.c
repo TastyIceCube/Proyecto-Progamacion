@@ -156,11 +156,13 @@ void consultar_materia(int numMateria){
 
 }
 void consultar_calificaciones(int numMateria){
+    if materias[numMateria].categorias[i] >= 0{
     for (int i = 0; i < 10; i++){
         printf("Categoria %d: %s\n", i + 1, materias[numMateria].categorias[i]);
         for (int j = 0; j < materias[numMateria].categorias[i][1]; j++){
             printf("Nota %d: %f\n", j + 1, materias[numMateria].categorias[i][j]);
         }
+    }
     }
 }
 void agregar_tareas(){
@@ -276,4 +278,3 @@ int main(){
     }
 
     return 0;*/
-
